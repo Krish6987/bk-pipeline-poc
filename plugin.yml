@@ -3,4 +3,5 @@ steps:
     plugins:
       - name: message-printer
         configuration:
-          message: "This is a test message"
+          properties:
+            message: "This is a test message"
