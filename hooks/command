@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
-
-pwd
-ls
-cd ../
-ls
+echo "Controller directory: $HOOKS_DIR"
+cd $HOOKS_DIR && cd ../
 # Run the Golang script
 go run ../print_message.go
