@@ -18,4 +18,4 @@ export PATH=$PATH:$GOPATH/bin
 
 go version
 
-HOOKS_DIR=$(pwd)"
+CONTROLLER_DIR=$(pwd)/..
