@@ -18,4 +18,5 @@ export PATH=$PATH:$GOPATH/bin
 
 go version
 
-CONTROLLER_DIR=$(pwd)/..
+CONTROLLER_DIR=$(pwd)
+export CONTROLLER_DIR
