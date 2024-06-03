@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
+
+# Set the MESSAGE environment variable
+export MESSAGE="${BUILDKITE_PLUGIN_MESSAGE_PRINTER_MESSAGE}"
+
+echo $MESSAGE
+
 echo "Hooks directory: $HOOKS_DIR"
 cd $HOOKS_DIR/..
-ls
 
 # Run the Golang script
 go run print_message.go
