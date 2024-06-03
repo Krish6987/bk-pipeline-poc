@@ -18,5 +18,5 @@ export PATH=$PATH:$GOPATH/bin
 
 go version
 
-CONTROLLER_DIR=$(pwd)
-export CONTROLLER_DIR
+HOOKS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+export HOOKS_DIR
