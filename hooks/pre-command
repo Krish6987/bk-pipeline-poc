@@ -1,15 +1,16 @@
 #!/bin/bash
 set -e
 
-# Install Golang
-if ! command -v go &> /dev/null; then
-  echo "Golang not found, installing..."
-  wget https://dl.google.com/go/go1.16.5.linux-amd64.tar.gz
-  tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
-  export PATH=$PATH:/usr/local/go/bin
-else
-  echo "Golang already installed"
-fi
+# Create a temporary directory for Golang installation
+TEMP_GO_DIR=$(mktemp -d)
+echo "Installing Golang in temporary directory: $TEMP_GO_DIR"
+
+# Download and extract Golang
+wget https://dl.google.com/go/go1.16.5.linux-amd64.tar.gz -O $TEMP_GO_DIR/go1.16.5.linux-amd64.tar.gz
+tar -C $TEMP_GO_DIR -xzf $TEMP_GO_DIR/go1.16.5.linux-amd64.tar.gz
+
+# Add Golang to PATH
+export PATH=$TEMP_GO_DIR/go/bin:$PATH
 
 # Set GOPATH
 export GOPATH=$HOME/go

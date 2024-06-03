@@ -1,15 +1,8 @@
 #!/bin/bash
-set -eo pipefail
+set -e
 
-# DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
-
-# # shellcheck source=lib/utils.sh
-# . "${DIR}/../lib/utils.sh"
-
-# function main() {
-#     rm -rf "${PWD:?}/bin"
-# }
-
-# main "$@"
-
-echo "Executing pre-exit"
+# Remove the temporary Golang directory
+if [ -n "$TEMP_GO_DIR" ]; then
+  echo "Removing temporary Golang directory: $TEMP_GO_DIR"
+  rm -rf $TEMP_GO_DIR
+fi
