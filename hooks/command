@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+pwd
+ls
 cd ../
 ls
 # Run the Golang script
