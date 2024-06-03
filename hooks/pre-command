@@ -15,3 +15,5 @@ export PATH=$TEMP_GO_DIR/go/bin:$PATH
 # Set GOPATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+go version

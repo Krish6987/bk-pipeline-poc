@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
 
+cd ../
+ls
 # Run the Golang script
 go run ../print_message.go
