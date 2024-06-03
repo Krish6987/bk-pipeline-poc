@@ -1,0 +1,8 @@
+steps:
+  - label: "Print Message"
+    command: "hooks/command"
+    pre-command: "hooks/pre-command"
+    plugins:
+      - name: message-printer
+        configuration:
+          message: "This is a test message"

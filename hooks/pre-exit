@@ -1,0 +1,13 @@
+#!/bin/bash
+set -eo pipefail
+
+DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+
+# shellcheck source=lib/utils.sh
+. "${DIR}/../lib/utils.sh"
+
+function main() {
+    rm -rf "${PWD:?}/bin"
+}
+
+main "$@"
